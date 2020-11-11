@@ -28,8 +28,8 @@ const App = () => {
 
 	return (
 		<>
-			<Header />
-			<SavedList list={savedList} />
+			<Header list={savedList} />
+			{/* <SavedList list={savedList} /> */}
 
 			<Route exact path="/">
 				<MovieList movies={movieList} />

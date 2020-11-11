@@ -2,22 +2,11 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { css } from "styled-components";
 import theme from "styled-theming";
-import { staticVars } from "../theme/theme";
-const { dark, light } = staticVars;
 
-// const listTheme = theme("mode", {
-// 	dark: css`
-
-// 	`,
-// 	light: css``,
-// });
-
-/* ${listTheme}; */
 const List = styled.div`
 	display: flex;
 	background-color: var(--pDark);
 	color: var(--pText);
-
 `;
 
 function SavedList({ list }) {
