@@ -38,6 +38,7 @@ export const XThemeProvider = ({ children }) => {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			font-size: 60px;
 		}
+		transition: all 3s ease;
 	`;
 
 	const toggle = () => {
