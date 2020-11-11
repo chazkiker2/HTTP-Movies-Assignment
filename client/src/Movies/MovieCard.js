@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "../components/Layout/Card";
-import Container from "../components/Layout/Container";
+import SLink from "../components/Layout/SLink";
 import Flex from "../components/Layout/Flex";
 import Heading from "../components/Layout/Heading";
 
@@ -24,7 +24,6 @@ const StyledCard = styled(Card)`
 	p {
 		font-size: 18px;
 	}
-
 `;
 
 const MovieCard = props => {
@@ -52,6 +51,9 @@ const MovieCard = props => {
 							{star}
 						</p>
 					))}
+				</div>
+				<div>
+					<SLink to={`/update-movie/${props.movie.id}`}>Edit</SLink>
 				</div>
 			</Flex>
 		</StyledCard>
