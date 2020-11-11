@@ -35,7 +35,6 @@ export const XThemeProvider = ({ children }) => {
 		}
 		p {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			font-size: 60px;
 		}
 	`;
 
