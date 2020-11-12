@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import theme from "styled-theming";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import SButton from "./Layout/SButton";
+import SLink from "./Layout/SLink";
+import Flex from "./Layout/Flex";
 import { staticVars, createClickerStyles, createModeStyles } from "../theme/theme";
 import SavedList from "../Movies/SavedList";
 
@@ -54,7 +56,10 @@ const Header = ({ list }) => {
 				<div>
 					<h1 className="title">Watching Movies w/ the Sound Off</h1>
 				</div>
-				<div><SButton onClick={toggleSavedOpen}>Saved</SButton></div>
+				<Flex>
+					<SLink to="/">Home</SLink>
+					<SButton onClick={toggleSavedOpen}>Saved</SButton>
+				</Flex>
 				<div className="icon-container" onClick={toggle}>
 					{mode === "dark"
 						? <img src={require('../assets/OverflowButton/moonFilled.svg')} alt="dark mode icon" style={{ height: 30, }} />

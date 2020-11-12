@@ -23,7 +23,11 @@ const App = () => {
 	};
 
 	useEffect(() => {
-		getMovieList();
+		// getMovieList();
+		axios
+			.get("http://localhost:5000/api/movies")
+			.then(res => setMovieList(res.data))
+			.catch(err => console.log(err.response));
 	}, []);
 
 	return (

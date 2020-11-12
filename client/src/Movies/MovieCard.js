@@ -1,10 +1,13 @@
 import React from 'react';
 import Card from "../components/Layout/Card";
 import SLink from "../components/Layout/SLink";
+import SButton from "../components/Layout/SButton";
 import Flex from "../components/Layout/Flex";
 import Heading from "../components/Layout/Heading";
 
 import styled from "styled-components";
+import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 const StyledCard = styled(Card)`
 	display: inline-block;
@@ -27,7 +30,17 @@ const StyledCard = styled(Card)`
 `;
 
 const MovieCard = props => {
-	const { title, director, metascore, stars } = props.movie;
+	const history = useHistory();
+	const { title, director, metascore, stars, id } = props.movie;
+	const handleDelete = () => {
+		axios.delete(`http://localhost:5000/api/movies/${id}`)
+			.then(res => {
+				console.log(res);
+			}).catch(err => {
+				console.log(err);
+			});
+		history.push("/");
+	}
 	return (
 		// <Container full>
 		// 	<Flex justifyAround alignCenter className="flex">
@@ -53,7 +66,8 @@ const MovieCard = props => {
 					))}
 				</div>
 				<div>
-					<SLink to={`/update-movie/${props.movie.id}`}>Edit</SLink>
+					<SLink to={`/update-movie/${id}`}>Edit</SLink>
+					<SButton onClick={handleDelete}>Delete</SButton>
 				</div>
 			</Flex>
 		</StyledCard>

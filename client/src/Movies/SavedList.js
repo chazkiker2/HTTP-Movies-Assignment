@@ -1,9 +1,6 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
-import styled, { css } from "styled-components";
-import theme from "styled-theming";
-
-import SLink from "../components/Layout/SLink";
+import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
 import Flex from "../components/Layout/Flex";
 import Container from "../components/Layout/Container";
 
@@ -34,7 +31,6 @@ function SavedList({ list }) {
 								</NavLink>
 							);
 						})}
-						<SLink to="/">Home</SLink>
 					</Flex>
 				</Flex>
 			</Container>
